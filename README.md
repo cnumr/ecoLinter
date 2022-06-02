@@ -12,12 +12,6 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-greenit`:
-
-```
-$ npm install eslint-plugin-greenit --save-dev
-```
-
 ## Usage
 
 Add `greenit` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:

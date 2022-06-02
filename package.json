@@ -9,24 +9,28 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "testjs": "mocha  tests --full-trace --recursive ",
-    "testcss": "npx stylelint \"ressources/*.css\"",
-    "report": "stylelint ressources/*.css -f json > stylelint-report.json"
+    "test:js": "mocha tests --full-trace --recursive ",
+    "test:css": "npx stylelint \"resources/css/*.css\"",
+    "report:js": "eslint resources/js/* -f json > eslint-report.json",
+    "report:css": "stylelint resources/css/* -f json > stylelint-report.json"
   },
   "files": [
     "lib"
   ],
   "dependencies": {
-    "@babel/eslint-parser": "^7.18.2",
     "requireindex": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/register": "^7.17.7",
     "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-self": "^1.2.1",
     "mocha": "^10.0.0",
     "prettier": "^2.2.1",
     "stylelint": "^14.8.5",
