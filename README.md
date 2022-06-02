@@ -38,9 +38,10 @@ Then configure the rules you want to use under the rules section.
 
 | Name | Description |
 | :--  | :--         |
-| [measure-triggering-reflow](docs/rules/measure-triggering-reflow.md) | Signal measurements that might force the browser to reflow |
-| [no-function-call-in-loop-declaration](docs/rules/no-function-call-in-loop-declaration.md) | Prevent calling a function at each iteration of a for loop |
-| [no-multiple-css-modifications](docs/rules/no-multiple-css-modifications.md) | Signal stylistic changes that could be grouped to limit repaint and reflow |
+| [externalize-js-css](docs/rules/externalize-js-css.md) | Externalize the import of .js and .css files |
+| [no-function-call-in-loop](docs/rules/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
+| [no-post-increment-var](docs/rules/no-post-increment-var.md) | Replace $i++ by ++$i |
+| [no-try-catch-finally](docs/rules/no-try-catch-finally.md) | Avoid using try-catch-finally |
 
 # CSS
 

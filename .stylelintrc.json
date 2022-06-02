@@ -1,7 +1,7 @@
 {
     "extends": ["stylelint-config-standard", "stylelint-config-recommended"],
     "plugins": [
-        "./rules/standard-policy.js",
+        "./lib/rules/css/standard-policy.js",
         "stylelint-group-selectors"
     ],
     "rules": {
