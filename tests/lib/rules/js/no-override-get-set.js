@@ -2,19 +2,19 @@
  * @fileoverview Functions should not be called inside the declaration of a loop
  * @author
  */
-"use strict";
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../../lib/rules/js/no-override-get-set"),
-  RuleTester = require("eslint").RuleTester;
+const rule = require('../../../../lib/rules/js/no-override-get-set'),
+  RuleTester = require('eslint').RuleTester;
 
 RuleTester.setDefaultConfig({
   parserOptions: {
-    ecmaVersion: 6
-  }
+    ecmaVersion: 6,
+  },
 });
 
 //------------------------------------------------------------------------------
@@ -22,8 +22,8 @@ RuleTester.setDefaultConfig({
 //------------------------------------------------------------------------------
 
 const error = {
-  message: "Getters and setters should not be overridden",
-  type: "CallExpression"
+  message: 'Getters and setters should not be overridden',
+  type: 'CallExpression',
 };
 
 //------------------------------------------------------------------------------
@@ -32,37 +32,29 @@ const error = {
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-override-get-set", rule, {
+ruleTester.run('no-override-get-set', rule, {
   valid: [
-    "Object.defineProperty(foo, \"bar\", { test: function() {}})",
-    "Object.defineProperty(foo, \"bar\", { get: 'test'})",
-    "Object.defineProperty(foo, \"bar\", { set: 'test'})"
+    'Object.defineProperty(foo, "bar", { test: function() {}})',
+    'Object.defineProperty(foo, "bar", { get: \'test\'})',
+    'Object.defineProperty(foo, "bar", { set: \'test\'})',
   ],
 
   invalid: [
     {
-      code: "Object.defineProperty(foo, \"bar\", { get: function() {}})",
-      errors: [
-        error
-      ]
+      code: 'Object.defineProperty(foo, "bar", { get: function() {}})',
+      errors: [error],
     },
     {
-      code: "Object.defineProperty(foo, \"bar\", { get: () => {}})",
-      errors: [
-        error
-      ]
+      code: 'Object.defineProperty(foo, "bar", { get: () => {}})',
+      errors: [error],
     },
     {
-      code: "Object.defineProperty(foo, \"bar\", { set: function() {}})",
-      errors: [
-        error
-      ]
+      code: 'Object.defineProperty(foo, "bar", { set: function() {}})',
+      errors: [error],
     },
     {
-      code: "Object.defineProperty(foo, \"bar\", { set: () => {}})",
-      errors: [
-        error
-      ]
-    }
-  ]
+      code: 'Object.defineProperty(foo, "bar", { set: () => {}})',
+      errors: [error],
+    },
+  ],
 });

@@ -4,10 +4,7 @@
     "stylelint-config-recommended",
     "stylelint-prettier/recommended"
   ],
-  "plugins": [
-      "./lib/rules/css/avoid-animation.js",
-      "./lib/rules/css/no-custom-font.js"
-  ],
+  "plugins": ["./lib/rules/css/avoid-animation.js", "./lib/rules/css/no-custom-font.js"],
   "rules": {
     "greenit/avoid-animation": true,
     "greenit/no-custom-font": true

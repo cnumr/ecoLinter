@@ -9,17 +9,17 @@ Example of **incorrect** code for this rule:
 
 ```css
 .box {
-    will-change: transform, opacity;
+  will-change: transform, opacity;
 }
 ```
 
 Alternative code for this rule:
 
 ```css
-@media (prefers-reduced-motion : no-preference ) {
-    .animation {
-        animation: fadeIn 4s ease;
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .animation {
+    animation: fadeIn 4s ease;
+  }
 }
 ```
 

@@ -2,7 +2,6 @@
 
 Please describe the origin of the rule here.
 
-
 ## Rule Details
 
 This rule aims to flag when override getter or setter
@@ -10,14 +9,12 @@ This rule aims to flag when override getter or setter
 Examples of **incorrect** code for this rule:
 
 ```js
-Object.defineProperty(foo, "bar", { get: function() {}})
-
+Object.defineProperty(foo, 'bar', { get: function () {} });
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
 const obj = {
   log: ['a', 'b', 'c'],
   get latest() {
@@ -25,7 +22,6 @@ const obj = {
       return undefined;
     }
     return this.log[this.log.length - 1];
-  }
+  },
 };
-
-``` 
+```

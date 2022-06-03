@@ -16,10 +16,10 @@ jobs:
       - name: Install dependencies
         run: npm install
       # TODO run tests
-#      - name: Run js tests
-#        run: npm testjs
-#      - name: Run css tests
-#        run: npm testcss
+      #      - name: Run js tests
+      #        run: npm testjs
+      #      - name: Run css tests
+      #        run: npm testcss
       - name: Publish
         run: |
           npm publish

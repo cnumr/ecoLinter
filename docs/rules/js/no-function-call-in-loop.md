@@ -9,27 +9,21 @@ The rule enforces that loop declaration do not call a function in the stop test.
 Examples of **incorrect** code for this rule:
 
 ```js
-
-for (let i = 0; i < parseInt('5'); i++) {
-    bar(i);
+for (let i = 0; i < parseInt('5'); i++) {
+  bar(i);
 }
-
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-for (let i = 0; i < 5; i++) {
-    bar(i);
+for (let i = 0; i < 5; i++) {
+  bar(i);
 }
-
 ```
 
 ```js
-
-for (let i = 0; i < arr.length; i++) {
-    bar(i);
+for (let i = 0; i < arr.length; i++) {
+  bar(i);
 }
-
 ```

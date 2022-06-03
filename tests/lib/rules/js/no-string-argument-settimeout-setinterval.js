@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../../lib/rules/js/no-string-argument-settimeout-setinterval"),
-  RuleTester = require("eslint").RuleTester;
+const rule = require('../../../../lib/rules/js/no-string-argument-settimeout-setinterval'),
+  RuleTester = require('eslint').RuleTester;
 
 RuleTester.setDefaultConfig({
   parserOptions: {
@@ -18,13 +18,13 @@ RuleTester.setDefaultConfig({
 //------------------------------------------------------------------------------
 
 const setTimeoutCallExpressionError = {
-  message: "setTimeout should not be called with string as first argument",
-  type: "CallExpression",
+  message: 'setTimeout should not be called with string as first argument',
+  type: 'CallExpression',
 };
 
 const setIntervalCallExpressionError = {
-  message: "setInterval should not be called with string as first argument",
-  type: "CallExpression",
+  message: 'setInterval should not be called with string as first argument',
+  type: 'CallExpression',
 };
 
 //------------------------------------------------------------------------------
@@ -33,38 +33,30 @@ const setIntervalCallExpressionError = {
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-string-argument-settimeout-setinterval", rule, {
+ruleTester.run('no-string-argument-settimeout-setinterval', rule, {
   valid: [
-    "setTimeout(() => {})",
-    "setTimeout(() => {}, 1000)",
-    "setTimeout(myFunction)",
-    "setTimeout(myFunction, 1000)"
+    'setTimeout(() => {})',
+    'setTimeout(() => {}, 1000)',
+    'setTimeout(myFunction)',
+    'setTimeout(myFunction, 1000)',
   ],
 
   invalid: [
     {
       code: "setTimeout('bouh')",
-      errors: [
-        setTimeoutCallExpressionError
-      ],
+      errors: [setTimeoutCallExpressionError],
     },
     {
       code: "setTimeout('bouh', 1000)",
-      errors: [
-        setTimeoutCallExpressionError
-      ],
+      errors: [setTimeoutCallExpressionError],
     },
     {
       code: "setTimeout('() => {}')",
-      errors: [
-        setTimeoutCallExpressionError
-      ],
+      errors: [setTimeoutCallExpressionError],
     },
     {
       code: "window.setInterval('() => {}')",
-      errors: [
-        setIntervalCallExpressionError
-      ],
+      errors: [setIntervalCallExpressionError],
     },
   ],
 });
