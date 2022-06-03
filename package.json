@@ -10,8 +10,11 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "npm run test:js && npm run test:css",
+    "test:coverage": "npm run test:js:coverage && npm run test:css:coverage",
     "test:js": "mocha tests/lib/rules/js --full-trace --recursive",
+    "test:js:coverage": "nyc mocha tests/lib/rules/js --full-trace --recursive",
     "test:css": "jest tests/lib/rules/css",
+    "test:css:coverage": "jest tests/lib/rules/css --coverage",
     "report:js": "eslint resources/js/**/*.js -f json > eslint-report.json",
     "report:css": "stylelint resources/css/**/*.css -f json > stylelint-report.json"
   },
@@ -35,6 +38,7 @@
     "jest": "^28.1.0",
     "jest-preset-stylelint": "^5.0.3",
     "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.2.1",
     "stylelint": "^14.8.5",
     "stylelint-config-prettier": "^9.0.3",
