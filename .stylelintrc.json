@@ -1,13 +1,11 @@
 {
-    "extends": ["stylelint-config-standard", "stylelint-config-recommended"],
-    "plugins": [
-        "./lib/rules/css/standard-policy.js",
-        "stylelint-group-selectors"
-    ],
-    "rules": {
-        "testim-plugin/standard-policy": true,
-        "selector-max-compound-selectors": 3,
-        "plugin/stylelint-group-selectors": true,
-        "declaration-block-no-redundant-longhand-properties": true
-    }
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": ["./lib/rules/css/no-custom-font.js"],
+  "rules": {
+    "greenit/no-custom-font": true
+  }
 }
