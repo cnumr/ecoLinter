@@ -15,6 +15,7 @@
   "plugins": ["self"],
   "rules": {
     "self/externalize-js-css": "error",
+    "self/no-full-sql-request": "error",
     "self/no-function-call-in-loop": "error",
     "self/no-post-increment-var": "error",
     "self/no-try-catch-finally": "error"
