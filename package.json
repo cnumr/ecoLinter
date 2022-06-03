@@ -10,7 +10,7 @@
   "main": "lib/index.js",
   "scripts": {
     "testjs": "mocha  tests --full-trace --recursive ",
-    "testcss": "npx stylelint \"ressources/*.css\"",
+    "lintcss": "npx stylelint \"ressources/*.css\"",
     "report": "stylelint ressources/*.css -f json > stylelint-report.json"
   },
   "files": [
