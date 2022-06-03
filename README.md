@@ -34,14 +34,20 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-## Supported Rules
+## Supported ESLint Rules
 
 | Name | Description |
 | :--  | :--         |
-| [externalize-js-css](docs/rules/externalize-js-css.md) | Externalize the import of .js and .css files |
-| [no-function-call-in-loop](docs/rules/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
-| [no-post-increment-var](docs/rules/no-post-increment-var.md) | Replace $i++ by ++$i |
-| [no-try-catch-finally](docs/rules/no-try-catch-finally.md) | Avoid using try-catch-finally |
+| [externalize-js-css](docs/rules/js/externalize-js-css.md) | Externalize the import of .js and .css files |
+| [no-function-call-in-loop](docs/rules/js/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
+| [no-post-increment-var](docs/rules/js/no-post-increment-var.md) | Replace $i++ by ++$i |
+| [no-try-catch-finally](docs/rules/js/no-try-catch-finally.md) | Avoid using try-catch-finally |
+
+## Supported Stylelint Rules
+
+| Name | Description |
+| :--  | :--         |
+| [no-custom-font](docs/rules/css/no-custom-font.md) | Avoid using custom font |
 
 # CSS
 
