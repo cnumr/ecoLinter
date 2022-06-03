@@ -1,15 +1,15 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recommended"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended",
+    "stylelint-prettier/recommended"
+  ],
   "plugins": [
-    "./lib/rules/css/standard-policy.js",
-    "./lib/rules/css/avoid-animation.js",
-    "stylelint-group-selectors"
+      "./lib/rules/css/avoid-animation.js",
+      "./lib/rules/css/no-custom-font.js"
   ],
   "rules": {
-    "testim-plugin/standard-policy": true,
-    "selector-max-compound-selectors": 3,
-    "plugin/stylelint-group-selectors": true,
-    "declaration-block-no-redundant-longhand-properties": true,
-    "greenit/avoid-animation": true
+    "greenit/avoid-animation": true,
+    "greenit/no-custom-font": true
   }
 }
