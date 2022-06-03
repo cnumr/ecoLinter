@@ -37,7 +37,7 @@ Then configure the rules you want to use under the rules section.
 | Name                                                                  | Description                                                     |
 | :-------------------------------------------------------------------- | :-------------------------------------------------------------- |
 | [externalize-js-css](docs/rules/js/externalize-js-css.md)             | Externalize the import of .js and .css files                    |
-| [no-full-sql-request](docs/rules/js/no-full-sql-request.md) | SQL request should not select all fields in a table |
+| [no-full-sql-request](docs/rules/js/no-full-sql-request.md)           | SQL request should not select all fields in a table             |
 | [no-function-call-in-loop](docs/rules/js/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
 | [no-post-increment-var](docs/rules/js/no-post-increment-var.md)       | Replace $i++ by ++$i                                            |
 | [no-try-catch-finally](docs/rules/js/no-try-catch-finally.md)         | Avoid using try-catch-finally                                   |

@@ -4,7 +4,7 @@ Using SQL requests that select all fields in a table is not efficient and can in
 
 ## Rule Details
 
-The rule enforces that no "SELECT * FROM" is used in literals.
+The rule enforces that no "SELECT \* FROM" is used in literals.
 
 Examples of **incorrect** code for this rule:
 
