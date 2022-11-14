@@ -1,6 +1,6 @@
 # Avoid to override getter or setter (s34)
 
-Please describe the origin of the rule here.
+Avoid to override getter or setter, it save computer resources.
 
 
 ## Rule Details
