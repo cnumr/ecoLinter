@@ -2,37 +2,32 @@
  * @fileoverview Remplacer les $i++ par ++$i
  * @author Gael Pellevoizin
  */
-"use strict";
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../../lib/rules/js/s67"),
-
-    RuleTester = require("eslint").RuleTester;
-
+const rule = require('../../../../lib/rules/js/no-post-increment-var');
+const RuleTester = require('eslint').RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("s67", rule, {
+ruleTester.run('no-post-increment-var', rule, {
+  valid: ['++counter', 'counter + 73', 'counter += 73', 'counter =+ 73', '73 + counter'],
 
-    valid: [
-        "++counter",
-        "counter + 73",
-        "counter += 73",
-        "counter =+ 73",
-        "73 + counter"
-    ],
-
-    invalid: [{
-        code: "counter++;",
-        errors: [{
-            message: "Use i++ instead of ++i.",
-            type: "UpdateExpression"
-        }]
-    }]
+  invalid: [
+    {
+      code: 'counter++;',
+      errors: [
+        {
+          message: 'Use i++ instead of ++i.',
+          type: 'UpdateExpression',
+        },
+      ],
+    },
+  ],
 });
