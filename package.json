@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-greenit",
-  "version": "1.0.3-SNAPSHOT",
+  "version": "1.0.0-SNAPSHOT",
   "description": "GreenIT rules for JavaScript and CSS",
   "keywords": [
     "eslint",
