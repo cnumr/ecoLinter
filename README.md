@@ -1,4 +1,4 @@
-# eslint-plugin-greenit
+# eslint-plugin-ecolinter
 
 GreenIT rules for JavaScript and CSS
 
@@ -14,12 +14,12 @@ $ npm i eslint --save-dev
 
 ## Usage
 
-Add `greenit` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `ecolinter` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "greenit"
+        "ecolinter"
     ]
 }
 ```
@@ -29,7 +29,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "greenit/rule-name": 2
+        "ecolinter/rule-name": 2
     }
 }
 ```
@@ -43,12 +43,21 @@ Then configure the rules you want to use under the rules section.
 | [no-function-call-in-loop](docs/rules/js/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
 | [no-post-increment-var](docs/rules/js/no-post-increment-var.md) | Replace $i++ by ++$i |
 | [no-try-catch-finally](docs/rules/js/no-try-catch-finally.md) | Avoid using try-catch-finally |
+| [multiple-css-changes](docs/rules/js/multiple-css-changes.md) | Batch multiple CSS properties changes at once |
+| [no-call-dom-object-multiple-times](docs/rules/js/no-call-dom-object-multiple-times.md) | Reduce DOM access assigning |
+| [no-direct-DOM-access](docs/rules/js/no-direct-DOM-access.md) | No DOM access without assignation to avoid requesting the same element multiple times |
+| [no-override-get-set](docs/rules/js/no-override-get-set.md) | Avoid to override getter or setter |
+| [no-string-argument-settimeout-setinterval](docs/rules/js/no-string-argument-settimeout-setinterval.md) | Use a function for the first argument of setTimeout() and setInterval() |
+
+
 
 ## Supported Stylelint Rules
 
 | Name | Description |
 | :--  | :--         |
 | [no-custom-font](docs/rules/css/no-custom-font.md) | Avoid using custom font |
+| [avoid-animation](docs/rules/css/avoid-animation.md) | Avoid too many css animations |
+
 
 # CSS
 
