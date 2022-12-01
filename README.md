@@ -6,13 +6,14 @@ GreenIT rules for JavaScript and CSS
 
 ## Installation 
 
-You'll first need to install [ESLint](http://eslint.org):
+You'll first need to install [ESLint](http://eslint.org) and eslint-plugin-ecolinter:
 
 ```
 $ npm i eslint --save-dev
+$ npm i eslint-plugin-ecolinter
 ```
 
-## Usage
+## Usage (ESLint Rules)
 
 Add `ecolinter` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
@@ -29,7 +30,30 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "ecolinter/rule-name": 2
+        "ecolinter/rule-name": "warn"
+    }
+}
+```
+
+It is always recommended to create npm scripts so that you can use them in CI systems as well.
+
+`package.json` file:
+
+For JavaScript projects, use the following npm scripts.
+ 
+```json
+{
+    "scripts": {
+        "lint:js": "eslint -c .eslintrc.js --ext .js,.jsx ."
+    }
+}
+```
+For TypeScript projects, use the following npm scripts.
+
+```json
+{
+    "scripts": {
+        "lint:js": "eslint -c .eslintrc.js --ext .js,.jsx,.ts,.tsx ."
     }
 }
 ```
@@ -49,7 +73,40 @@ Then configure the rules you want to use under the rules section.
 | [no-override-get-set](docs/rules/js/no-override-get-set.md) | Avoid to override getter or setter |
 | [no-string-argument-settimeout-setinterval](docs/rules/js/no-string-argument-settimeout-setinterval.md) | Use a function for the first argument of setTimeout() and setInterval() |
 
+## Usage (Stylelint Rules)
 
+Add the file of the rule to the plugins section of your `.stylelintrc` configuration file:
+
+```json
+{
+    "plugins": [
+        "./node_modules/eslint-plugin-ecolinter/lib/rules/css/rule-name.js"
+    ]
+}
+```
+
+Then activate the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "greenit/rule-name": true
+    }
+}
+
+```
+It is always recommended to create npm scripts so that you can use them in CI systems as well.
+
+`package.json` file:
+
+ 
+```json
+{
+    "scripts": {
+       "lint:css": "stylelint src",
+    }
+}
+```
 
 ## Supported Stylelint Rules
 
