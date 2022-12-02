@@ -72,6 +72,8 @@ For TypeScript projects, use the following npm scripts.
 | [no-direct-DOM-access](docs/rules/js/no-direct-DOM-access.md) | No DOM access without assignation to avoid requesting the same element multiple times |
 | [no-override-get-set](docs/rules/js/no-override-get-set.md) | Avoid to override getter or setter |
 | [no-string-argument-settimeout-setinterval](docs/rules/js/no-string-argument-settimeout-setinterval.md) | Use a function for the first argument of setTimeout() and setInterval() |
+| [no-resize-image](docs/rules/js/no-resize-image.md) | The file width and height should be adapted to the target size in the browser |
+
 
 ## Usage (Stylelint Rules)
 
@@ -103,7 +105,7 @@ It is always recommended to create npm scripts so that you can use them in CI sy
 ```json
 {
     "scripts": {
-       "lint:css": "stylelint src",
+       "lint:css": "stylelint src"
     }
 }
 ```
