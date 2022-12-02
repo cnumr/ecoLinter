@@ -1,0 +1,5 @@
+node_modules
+.idea
+*-report.json
+.nyc_output
+coverage

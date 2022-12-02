@@ -1,4 +1,4 @@
-# eslint-plugin-greenit
+# eslint-plugin-ecolinter
 
 GreenIT rules for JavaScript and CSS
 
@@ -6,26 +6,21 @@ GreenIT rules for JavaScript and CSS
 
 ## Installation 
 
-You'll first need to install [ESLint](http://eslint.org):
+You'll first need to install [ESLint](http://eslint.org) and eslint-plugin-ecolinter:
 
 ```
 $ npm i eslint --save-dev
+$ npm i eslint-plugin-ecolinter
 ```
 
-Next, install `eslint-plugin-greenit`:
+## Usage (ESLint Rules)
 
-```
-$ npm install eslint-plugin-greenit --save-dev
-```
-
-## Usage
-
-Add `greenit` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `ecolinter` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "greenit"
+        "ecolinter"
     ]
 }
 ```
@@ -35,18 +30,91 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "greenit/rule-name": 2
+        "ecolinter/rule-name": "warn"
     }
 }
 ```
 
-## Supported Rules
+It is always recommended to create npm scripts so that you can use them in CI systems as well.
+
+`package.json` file:
+
+For JavaScript projects, use the following npm scripts.
+ 
+```json
+{
+    "scripts": {
+        "lint:js": "eslint -c .eslintrc.js --ext .js,.jsx ."
+    }
+}
+```
+For TypeScript projects, use the following npm scripts.
+
+```json
+{
+    "scripts": {
+        "lint:js": "eslint -c .eslintrc.js --ext .js,.jsx,.ts,.tsx ."
+    }
+}
+```
+
+## Supported ESLint Rules
 
 | Name | Description |
 | :--  | :--         |
-| [measure-triggering-reflow](docs/rules/measure-triggering-reflow.md) | Signal measurements that might force the browser to reflow |
-| [no-function-call-in-loop-declaration](docs/rules/no-function-call-in-loop-declaration.md) | Prevent calling a function at each iteration of a for loop |
-| [no-multiple-css-modifications](docs/rules/no-multiple-css-modifications.md) | Signal stylistic changes that could be grouped to limit repaint and reflow |
+| [externalize-js-css](docs/rules/js/externalize-js-css.md) | Externalize the import of .js and .css files |
+| [no-full-sql-request](docs/rules/js/no-full-sql-request.md) | SQL request should not select all fields in a table |
+| [no-function-call-in-loop](docs/rules/js/no-function-call-in-loop.md) | Functions should not be called inside the declaration of a loop |
+| [no-post-increment-var](docs/rules/js/no-post-increment-var.md) | Replace $i++ by ++$i |
+| [no-try-catch-finally](docs/rules/js/no-try-catch-finally.md) | Avoid using try-catch-finally |
+| [multiple-css-changes](docs/rules/js/multiple-css-changes.md) | Batch multiple CSS properties changes at once |
+| [no-call-dom-object-multiple-times](docs/rules/js/no-call-dom-object-multiple-times.md) | Reduce DOM access assigning |
+| [no-direct-DOM-access](docs/rules/js/no-direct-DOM-access.md) | No DOM access without assignation to avoid requesting the same element multiple times |
+| [no-override-get-set](docs/rules/js/no-override-get-set.md) | Avoid to override getter or setter |
+| [no-string-argument-settimeout-setinterval](docs/rules/js/no-string-argument-settimeout-setinterval.md) | Use a function for the first argument of setTimeout() and setInterval() |
+
+## Usage (Stylelint Rules)
+
+Add the file of the rule to the plugins section of your `.stylelintrc` configuration file:
+
+```json
+{
+    "plugins": [
+        "./node_modules/eslint-plugin-ecolinter/lib/rules/css/rule-name.js"
+    ]
+}
+```
+
+Then activate the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "greenit/rule-name": true
+    }
+}
+
+```
+It is always recommended to create npm scripts so that you can use them in CI systems as well.
+
+`package.json` file:
+
+ 
+```json
+{
+    "scripts": {
+       "lint:css": "stylelint src",
+    }
+}
+```
+
+## Supported Stylelint Rules
+
+| Name | Description |
+| :--  | :--         |
+| [no-custom-font](docs/rules/css/no-custom-font.md) | Avoid using custom font |
+| [avoid-animation](docs/rules/css/avoid-animation.md) | Avoid too many css animations |
+
 
 # CSS
 
