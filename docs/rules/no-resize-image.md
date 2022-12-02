@@ -3,7 +3,7 @@
 
 ## Rule Details
 
-This rule aims to...
+The file width and height should be adapted to the target size in the browser.
 
 Examples of **incorrect** code for this rule:
 
@@ -20,5 +20,3 @@ Examples of **correct** code for this rule:
 <img src="data.png" style="width:auto">
 
 ```
-
-As such as the file width and height should be adapted to the target size in the browser
