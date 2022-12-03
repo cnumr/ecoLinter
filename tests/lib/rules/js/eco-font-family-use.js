@@ -8,8 +8,27 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/eco-font-family-use"),
-  RuleTester = require("eslint").RuleTester;
+const rule = require("../../../../lib/rules/js/eco-font-family-use");
+const RuleTester = require("eslint").RuleTester;
+
+RuleTester.setDefaultConfig({
+  parserOptions: {
+    ecmaVersion: 9,
+    ecmaFeatures: {
+      "jsx": true
+    },
+  },
+});
+
+const TemplateElement = {
+  message: "Your font-family is not in the standard fonts family : 'Impact'",
+  //type: "TemplateElement"
+};
+
+const Identifier = {
+  message: "Your font-family is not in the standard fonts family : Azerty",
+  //type: "Identifier"
+};
 
 
 //------------------------------------------------------------------------------
@@ -19,18 +38,17 @@ const rule = require("../../../lib/rules/eco-font-family-use"),
 const ruleTester = new RuleTester();
 ruleTester.run("eco-font-family-use", rule, {
   valid: [
-    {code: "<span style={{fontFamily: 'Cesar, sans-serif'}}>hello</span>"},
-    {code: "const Button = styled.button`font-family: 'serif, sans-serif';`"},
+      "const style={fontFamily: 'serif'}",
+      "const Button = styled.input`&&{font-family: 'serif';}`"
   ],
-
   invalid: [
     {
-      code: "<span style={{fontFamily: 'Cesar, sans-serif'}}>hello</span>",
-      errors: [{ message: "Your font-family is not in the standard fonts family", type: "Identifier" }],
+      code: "const style={fontFamily: 'Azerty'}",
+      errors: [Identifier]
     },
     {
-      code: "const Button = styled.button`font-family: 'serif, sans-serif, arial';`",
-      errors: [{ message: "Your font-family is not in the standard fonts family", type: "TemplateElement" }],
+      code: "const Button = styled.input`&&{font-family: 'Impact';}`",
+      errors: [TemplateElement]
     },
   ],
 });

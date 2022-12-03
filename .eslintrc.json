@@ -19,6 +19,6 @@
     "self/no-function-call-in-loop": "error",
     "self/no-post-increment-var": "error",
     "self/no-try-catch-finally": "error",
-    "self/eco-font-family-use": "suggestion"
+    "self/eco-font-family-use": "error"
   }
 }
