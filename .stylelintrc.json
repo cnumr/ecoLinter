@@ -7,11 +7,11 @@
   "plugins": [
       "./lib/rules/css/avoid-animation.js",
       "./lib/rules/css/no-custom-font.js",
-      "./lib/rules/css/avoid-gif.js"
+      "./lib/rules/css/avoid-white-blue-color"
   ],
   "rules": {
     "greenit/avoid-animation": true,
     "greenit/no-custom-font": true,
-    "greenit/avoid-gif": true
+    "greenit/avoid-white-blue-color": true
   }
 }
