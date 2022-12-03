@@ -41,7 +41,7 @@ ruleTester.run('avoid-gif', rule, {
   ],
   invalid: [
     {
-      code: 'const Page = (props) =>  {return (<div> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfn/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> </div>);}',
+      code: 'const Page = (props) =>  {return (<div> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> <img src="https://media.giphy.com/media/uA8WItRYSRkfm/giphy.gif" alt="loading..." /> </div>);}',
       errors: [literalError],
     },
   ],
