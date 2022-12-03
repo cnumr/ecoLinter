@@ -13,7 +13,7 @@ const RuleTester = require("eslint").RuleTester;
 
 RuleTester.setDefaultConfig({
   parserOptions: {
-    ecmaVersion: 9,
+    ecmaVersion: 6,
     ecmaFeatures: {
       "jsx": true
     },
