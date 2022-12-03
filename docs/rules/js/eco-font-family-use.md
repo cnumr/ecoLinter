@@ -4,7 +4,12 @@ This rule is exist in scope of the eco coding. The use of custom fonts cost requ
 
 ## Rule Details
 
-This rule warn the user if he used a non standard font.
+This rule warn the user if he used a non-standard font.
+
+A standard font is better than custom font because, it won't be asked to be loaded each time.
+The custom font will ask many resources to be loaded, each time we will reload the page a request will be sent to collect that font,
+and processor resources to handle the request.
+So the fact to avoid to use custom fonts is a good thing for eco coding
 
 Examples of **incorrect** code for this rule:
 
