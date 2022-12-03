@@ -21,7 +21,7 @@ RuleTester.setDefaultConfig({
 });
 
 const TemplateElement = {
-  message: "Your font-family is not in the standard fonts family : 'Impact'",
+  message: "Your font-family is not in the standard fonts family : Impact",
   //type: "TemplateElement"
 };
 
@@ -39,7 +39,7 @@ const ruleTester = new RuleTester();
 ruleTester.run("eco-font-family-use", rule, {
   valid: [
       "const style={fontFamily: 'serif'}",
-      "const Button = styled.input`&&{font-family: 'serif';}`"
+      "const Button = styled.input`font-family: 'serif';`"
   ],
   invalid: [
     {
@@ -47,7 +47,7 @@ ruleTester.run("eco-font-family-use", rule, {
       errors: [Identifier]
     },
     {
-      code: "const Button = styled.input`&&{font-family: 'Impact';}`",
+      code: "const Button = styled.input`font-family: 'Impact';`",
       errors: [TemplateElement]
     },
   ],
