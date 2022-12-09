@@ -1,3 +1,43 @@
+![Logo](docs/resources/logo-large.png)
+
+---
+
+<div style="color: red">
+
+<h1>⚠️ WARNING: This repository is no longer maintained ⚠️
+<br />
+Please use the latest ecoCode version here :</h1>
+
+</div>
+
+<h2>
+    <a href="https://github.com/green-code-initiative/ecoCode">Visit the new ecoCode v2.0 repository</a>
+</h2>
+<h3>
+<br />
+Continue to follow the project on : 
+<ul>
+    <li>
+        <a href="https://www.ecocode.io/">Our website</a>
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/showcase/ecocode-io/">Linkedin</a>
+    </li>
+</ul>
+And join us on our public Slack : 
+<ul>
+    <li>
+        <a href="https://join.slack.com/t/ecocode-workspace/shared_invite/zt-1lhvbit2p-WbaBoYZM6pcz4zZHE1WajQ">Slack</a>
+    </li>
+</ul>
+<br /> © The ecoCode team that continue to love <a href="https://github.com/cnumr">cnmur</a> ♥
+</h3>
+</div>
+<br />
+<br />
+
+---
+
 # eslint-plugin-ecolinter
 
 GreenIT rules for JavaScript and CSS
