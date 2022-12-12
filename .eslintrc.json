@@ -18,6 +18,8 @@
     "self/no-full-sql-request": "error",
     "self/no-function-call-in-loop": "error",
     "self/no-post-increment-var": "error",
-    "self/no-try-catch-finally": "error"
+    "self/no-try-catch-finally": "error",
+    "self/avoid-gif": "error",
+    "self/eco-font-family-use": "suggestion"
   }
 }
